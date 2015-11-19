@@ -13,55 +13,24 @@ void setup() {
 }
 
 void loop() {
-  for (int i = 0; i < s.length(); i += 2) {
+  for (int c = 0; c < s.length(); c += 2) {
     // las proximas 2 letras
-    int l1 = 0xff ^ s.charAt(i); // flips bits so 1 value turns on relay
+    int l1 = 0xff ^ s.charAt(c); // flips bits because of relay board
     int l2 = 0xff;
 
-    // check if there's a 2nd char
-    if ((i + 1) < s.length()) {
-      l2 = 0xff ^ s.charAt(i + 1); // flips bits so 1 value turns on relay
+    // check if there's a 2nd letra
+    if ((c + 1) < s.length()) {
+      l2 = 0xff ^ s.charAt(c + 1); // flips bits because of relay board
     }
 
-    // first encryption
-    int a = l1 / 1 % 2; // calculate LSB
-    int b = l1 / 2 % 2;
-    int c = l1 / 4 % 2;
-    int d = l1 / 8 % 2;
-    int e = l1 / 16 % 2;
-    int f = l1 / 32 % 2;
-    int g = l1 / 64 % 2;
-    int h = l1 / 128 % 2; //calculate MSB
-
-    digitalWrite(Letra1[0], a); // write LSB
-    digitalWrite(Letra1[1], b);
-    digitalWrite(Letra1[2], c);
-    digitalWrite(Letra1[3], d);
-    digitalWrite(Letra1[4], e);
-    digitalWrite(Letra1[5], f);
-    digitalWrite(Letra1[6], g);
-    digitalWrite(Letra1[7], h); // write MSB
-
-
-    // second encryption
-    a = l2 / 1 % 2; // calculate LSB
-    b = l2 / 2 % 2;
-    c = l2 / 4 % 2;
-    d = l2 / 8 % 2;
-    e = l2 / 16 % 2;
-    f = l2 / 32 % 2;
-    g = l2 / 64 % 2;
-    h = l2 / 128 % 2; //claculate MSB
-
-    digitalWrite(Letra2[0], a); // write LSB
-    digitalWrite(Letra2[1], b);
-    digitalWrite(Letra2[2], c);
-    digitalWrite(Letra2[3], d);
-    digitalWrite(Letra2[4], e);
-    digitalWrite(Letra2[5], f);
-    digitalWrite(Letra2[6], g);
-    digitalWrite(Letra2[7], h); // write MSB
-
+    for (int b = 0; b < 8; b++) {
+      // first letra encryption
+      int v1 = (l1 >> b) & 0x1;
+      digitalWrite(Letra1[b], v1);
+      // second letra encryption
+      int v2 = (l2 >> b) & 0x1;
+      digitalWrite(Letra2[b], v2);
+    }
     delay(333);
   }
 
