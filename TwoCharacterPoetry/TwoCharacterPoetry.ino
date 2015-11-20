@@ -26,10 +26,10 @@ void loop() {
     for (int b = 0; b < 8; b++) {
       // first letra encryption
       int v1 = (l1 >> b) & 0x1;
-      digitalWrite(Letra1[b], v1);
+      digitalWrite(Letra1[7-b], v1);
       // second letra encryption
       int v2 = (l2 >> b) & 0x1;
-      digitalWrite(Letra2[b], v2);
+      digitalWrite(Letra2[7-b], v2);
     }
     delay(333);
   }
