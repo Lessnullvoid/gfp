@@ -1,7 +1,8 @@
 int Letra1[] = {2, 3, 4, 5, 6, 7, 8, 9} ;
 int Letra2[] = {10, 11, 12, 13, 14, 15, 16, 17};
+long randNumber;
 
-String s = "Humans are animals";
+String s = " humans: aren't real, are animals, are free, are underrated, are among us, are cthulhu, like a virus. humans: need air, need love, need water, need to belong. human: services, rights, feelings, thoughts, process, dreams. human: sense of smell, sense of time, sent to mars, produce methane, protostomes or deuterostomes, protecting the environment destroying everything ";
 
 void setup() {
   for (int p = 0; p < 8; p++) {
@@ -10,10 +11,14 @@ void setup() {
     // cambiar 1 por 0 si estan invertidos los valores para prender/apagar the board
     digitalWrite(Letra1[p], 1); // turn them off initially
     digitalWrite(Letra2[p], 1); // 1 is off for the relay board
+    randomSeed(analogRead(5));
   }
 }
 
 void loop() {
+  
+  randNumber = random(200, 300);
+  
   for (int c = 0; c < s.length(); c += 2) {
     // las proximas 2 letras
     // cambiar 0xff para 0x00 si estan invertidos los valores para prender/apagar the board
@@ -67,7 +72,7 @@ void loop() {
     digitalWrite(Letra2[6], v6);
     digitalWrite(Letra2[7], v7);
 
-    delay(333);
+    delay(randNumber);
   }
 
 }
