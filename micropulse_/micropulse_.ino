@@ -23,279 +23,279 @@ void setup() {
     // cambiar 1 por 0 si estan invertidos los valores para prender/apagar the board
     digitalWrite(RelayBoard1[p], 1); // turn them off initially
     digitalWrite(RelayBoard2[p], 1); // 1 is off for the relay board
-    randomSeed(analogRead(9));   
+    randomSeed(analogRead(9));
   }
- 
-  }
-
-
-void loop() {
-randNumber = random(50, 500);
-randNumber2 = random(50, 250);
-
-bioelectricity = analogRead(MFC1);
-value = map(bioelectricity, -500, 1023, 0, 200);
-
-if (randNumber = 50) {
-
-  for (p=0;p<8;p++) {
-   digitalWrite(RelayBoard1[p], 0);
-      digitalWrite(RelayBoard2[p], 0);
-
-   delay(value);
-   digitalWrite(RelayBoard1[p], 1);
-      digitalWrite(RelayBoard2[p], 1);
-
-   delay(value);
-  }
-  for (p=7;p>=0;p--) {
-   digitalWrite(RelayBoard1[p], 0);
-      digitalWrite(RelayBoard2[p], 0);
-
-   delay(value);
-   digitalWrite(RelayBoard1[p], 1);
-      digitalWrite(RelayBoard2[p], 1);
-
-   delay(value);
-  }
-
-digitalWrite(RelayBoard1[2], 0);
-digitalWrite(RelayBoard2[2], 0);
-delay(value);
-
-digitalWrite(RelayBoard1[2], 1);
-digitalWrite(RelayBoard2[2], 1);
-delay(value);
- 
- }
-
-
-if (randNumber = 100) {
-
-digitalWrite(RelayBoard1[3], 0);
-digitalWrite(RelayBoard2[3], 0);
-delay(value);
-
-digitalWrite(RelayBoard1[3], 1);
-digitalWrite(RelayBoard2[3], 1);
-delay(value);
-
-digitalWrite(RelayBoard1[5], 0);
-digitalWrite(RelayBoard2[6], 0);
-delay(value);
-
-digitalWrite(RelayBoard1[5], 1);
-digitalWrite(RelayBoard2[6], 1);
-delay(value);
-
-digitalWrite(RelayBoard1[1], 0);
-digitalWrite(RelayBoard2[7], 0);
-delay(value);
-
-digitalWrite(RelayBoard1[1], 1);
-digitalWrite(RelayBoard2[7], 1);
-delay(value);
-
-digitalWrite(RelayBoard1[2], 0);
-digitalWrite(RelayBoard2[8], 0);
-delay(value);
-
-digitalWrite(RelayBoard1[2], 1);
-digitalWrite(RelayBoard2[8], 1);
-delay(value);
 
 }
 
-if (randNumber = 200) {
 
-digitalWrite(RelayBoard1[1], 0);
-delay(value);
-digitalWrite(RelayBoard1[1], 1);
-delay(value);
+void loop() {
+  randNumber = random(50, 500);
+  randNumber2 = random(50, 250);
 
-digitalWrite(RelayBoard1[2], 0);
-delay(value);
-digitalWrite(RelayBoard1[2], 1);
-delay(value);
+  bioelectricity = analogRead(MFC1);
+  value = map(bioelectricity, -500, 1023, 0, 200);
 
-digitalWrite(RelayBoard1[3], 0);
-delay(value);
-digitalWrite(RelayBoard1[3], 1);
-delay(value);
+  if (randNumber = 50) {
 
+    for (p = 0; p < 8; p++) {
+      digitalWrite(RelayBoard1[p], 0);
+      digitalWrite(RelayBoard2[p], 0);
 
-digitalWrite(RelayBoard1[4], 0);
-delay(value);
+      delay(value);
+      digitalWrite(RelayBoard1[p], 1);
+      digitalWrite(RelayBoard2[p], 1);
 
-digitalWrite(RelayBoard1[4], 1);
-delay(value);
+      delay(value);
+    }
+    for (p = 7; p >= 0; p--) {
+      digitalWrite(RelayBoard1[p], 0);
+      digitalWrite(RelayBoard2[p], 0);
 
+      delay(value);
+      digitalWrite(RelayBoard1[p], 1);
+      digitalWrite(RelayBoard2[p], 1);
 
-digitalWrite(RelayBoard1[5], 0);
-digitalWrite(RelayBoard1[5], 1);
-delay(value);
+      delay(value);
+    }
 
-digitalWrite(RelayBoard1[6], 0);
+    digitalWrite(RelayBoard1[2], 0);
+    digitalWrite(RelayBoard2[2], 0);
+    delay(value);
 
-digitalWrite(RelayBoard1[6], 1);
-delay(value);
+    digitalWrite(RelayBoard1[2], 1);
+    digitalWrite(RelayBoard2[2], 1);
+    delay(value);
 
-digitalWrite(RelayBoard1[7], 0);
-delay(value);
-
-digitalWrite(RelayBoard2[7], 1);
-delay(value);
-
-digitalWrite(RelayBoard2[1], 1);
-delay(value);
-
-digitalWrite(RelayBoard2[1], 1);
-delay(value);
- }
-
- if (randNumber = 150) {
-
-digitalWrite(RelayBoard2[4], HIGH);
-digitalWrite(RelayBoard2[5], HIGH);
-delay(value);
-
-digitalWrite(RelayBoard2[4], LOW);
-digitalWrite(RelayBoard2[5], LOW);
-delay(value);
-
-digitalWrite(RelayBoard2[6], HIGH);
-digitalWrite(RelayBoard2[7], HIGH);
-delay(value);
-
-digitalWrite(RelayBoard2[6], LOW);
-digitalWrite(RelayBoard2[7], LOW);
-delay(value);
-
-digitalWrite(RelayBoard2[1], HIGH);
-digitalWrite(RelayBoard2[2], HIGH);
-delay(value);
-
-digitalWrite(RelayBoard2[1], LOW);
-digitalWrite(RelayBoard2[2], LOW);
-delay(value);
-
-digitalWrite(RelayBoard2[4], HIGH);
-digitalWrite(RelayBoard2[5], HIGH);
-delay(value);
-
-digitalWrite(RelayBoard2[4], LOW);
-digitalWrite(RelayBoard2[5], LOW);
-delay(value);
- }
-
- if (randNumber = 300) {
-
-digitalWrite(RelayBoard1[0], 0);
-digitalWrite(RelayBoard1[1], 0);
-digitalWrite(RelayBoard1[2], 0);
-digitalWrite(RelayBoard1[3], 0);
-digitalWrite(RelayBoard1[4], 0);
-digitalWrite(RelayBoard1[5], 0);
-digitalWrite(RelayBoard1[6], 0);
-digitalWrite(RelayBoard1[7], 0);
-digitalWrite(RelayBoard2[0], 0);
-digitalWrite(RelayBoard2[1], 0);
-digitalWrite(RelayBoard2[2], 0);
-digitalWrite(RelayBoard2[3], 0);
-digitalWrite(RelayBoard2[4], 0);
-digitalWrite(RelayBoard2[5], 0);
-digitalWrite(RelayBoard2[6], 0);
-digitalWrite(RelayBoard2[7], 0);
-delay(value);
-digitalWrite(RelayBoard1[0], 1);
-digitalWrite(RelayBoard1[1], 1);
-digitalWrite(RelayBoard1[2], 1);
-digitalWrite(RelayBoard1[3], 1);
-digitalWrite(RelayBoard1[4], 1);
-digitalWrite(RelayBoard1[5], 1);
-digitalWrite(RelayBoard1[6], 1);
-digitalWrite(RelayBoard1[7], 1);
-digitalWrite(RelayBoard2[0], 1);
-digitalWrite(RelayBoard2[1], 1);
-digitalWrite(RelayBoard2[2], 1);
-digitalWrite(RelayBoard2[3], 1);
-digitalWrite(RelayBoard2[4], 1);
-digitalWrite(RelayBoard2[5], 1);
-digitalWrite(RelayBoard2[6], 1);
-digitalWrite(RelayBoard2[7], 1);
-
- 
- }
-
- if (randNumber = 250) {
-
-digitalWrite(RelayBoard1[6], HIGH);
-digitalWrite(RelayBoard2[6], HIGH);
-delay(value);
-
-digitalWrite(RelayBoard1[6], LOW);
-digitalWrite(RelayBoard2[6], LOW);
-delay(value);
-
-
-digitalWrite(RelayBoard1[4], HIGH);
-digitalWrite(RelayBoard2[4], HIGH);
-delay(value);
-
-digitalWrite(RelayBoard1[4], LOW);
-digitalWrite(RelayBoard2[4], LOW);
-delay(value);
-
-
-
- }
-
- if (randNumber = 400) {
-
-for (p=0;p<8;p++) {
-   digitalWrite(RelayBoard2[p], 0);
-   delay(value);
-   digitalWrite(RelayBoard2[p + 1], 0);
-   delay(value);
-   digitalWrite(RelayBoard2[p], 1);
-   delay(value*2);
-  }
-  for (p=7;p>0;p--) {
-   digitalWrite(RelayBoard2[p], 0);
-   delay(value);
-   digitalWrite(RelayBoard2[p - 1], 0);
-   delay(value);
-   digitalWrite(RelayBoard2[p], 1);
-   delay(value*2);
   }
 
- }
+
+  if (randNumber = 100) {
+
+    digitalWrite(RelayBoard1[3], 0);
+    digitalWrite(RelayBoard2[3], 0);
+    delay(value);
+
+    digitalWrite(RelayBoard1[3], 1);
+    digitalWrite(RelayBoard2[3], 1);
+    delay(value);
+
+    digitalWrite(RelayBoard1[5], 0);
+    digitalWrite(RelayBoard2[6], 0);
+    delay(value);
+
+    digitalWrite(RelayBoard1[5], 1);
+    digitalWrite(RelayBoard2[6], 1);
+    delay(value);
+
+    digitalWrite(RelayBoard1[1], 0);
+    digitalWrite(RelayBoard2[7], 0);
+    delay(value);
+
+    digitalWrite(RelayBoard1[1], 1);
+    digitalWrite(RelayBoard2[7], 1);
+    delay(value);
+
+    digitalWrite(RelayBoard1[2], 0);
+    digitalWrite(RelayBoard2[8], 0);
+    delay(value);
+
+    digitalWrite(RelayBoard1[2], 1);
+    digitalWrite(RelayBoard2[8], 1);
+    delay(value);
+
+  }
+
+  if (randNumber = 200) {
+
+    digitalWrite(RelayBoard1[1], 0);
+    delay(value);
+    digitalWrite(RelayBoard1[1], 1);
+    delay(value);
+
+    digitalWrite(RelayBoard1[2], 0);
+    delay(value);
+    digitalWrite(RelayBoard1[2], 1);
+    delay(value);
+
+    digitalWrite(RelayBoard1[3], 0);
+    delay(value);
+    digitalWrite(RelayBoard1[3], 1);
+    delay(value);
+
+
+    digitalWrite(RelayBoard1[4], 0);
+    delay(value);
+
+    digitalWrite(RelayBoard1[4], 1);
+    delay(value);
+
+
+    digitalWrite(RelayBoard1[5], 0);
+    digitalWrite(RelayBoard1[5], 1);
+    delay(value);
+
+    digitalWrite(RelayBoard1[6], 0);
+
+    digitalWrite(RelayBoard1[6], 1);
+    delay(value);
+
+    digitalWrite(RelayBoard1[7], 0);
+    delay(value);
+
+    digitalWrite(RelayBoard2[7], 1);
+    delay(value);
+
+    digitalWrite(RelayBoard2[1], 1);
+    delay(value);
+
+    digitalWrite(RelayBoard2[1], 1);
+    delay(value);
+  }
+
+  if (randNumber = 150) {
+
+    digitalWrite(RelayBoard2[4], HIGH);
+    digitalWrite(RelayBoard2[5], HIGH);
+    delay(value);
+
+    digitalWrite(RelayBoard2[4], LOW);
+    digitalWrite(RelayBoard2[5], LOW);
+    delay(value);
+
+    digitalWrite(RelayBoard2[6], HIGH);
+    digitalWrite(RelayBoard2[7], HIGH);
+    delay(value);
+
+    digitalWrite(RelayBoard2[6], LOW);
+    digitalWrite(RelayBoard2[7], LOW);
+    delay(value);
+
+    digitalWrite(RelayBoard2[1], HIGH);
+    digitalWrite(RelayBoard2[2], HIGH);
+    delay(value);
+
+    digitalWrite(RelayBoard2[1], LOW);
+    digitalWrite(RelayBoard2[2], LOW);
+    delay(value);
+
+    digitalWrite(RelayBoard2[4], HIGH);
+    digitalWrite(RelayBoard2[5], HIGH);
+    delay(value);
+
+    digitalWrite(RelayBoard2[4], LOW);
+    digitalWrite(RelayBoard2[5], LOW);
+    delay(value);
+  }
+
+  if (randNumber = 300) {
+
+    digitalWrite(RelayBoard1[0], 0);
+    digitalWrite(RelayBoard1[1], 0);
+    digitalWrite(RelayBoard1[2], 0);
+    digitalWrite(RelayBoard1[3], 0);
+    digitalWrite(RelayBoard1[4], 0);
+    digitalWrite(RelayBoard1[5], 0);
+    digitalWrite(RelayBoard1[6], 0);
+    digitalWrite(RelayBoard1[7], 0);
+    digitalWrite(RelayBoard2[0], 0);
+    digitalWrite(RelayBoard2[1], 0);
+    digitalWrite(RelayBoard2[2], 0);
+    digitalWrite(RelayBoard2[3], 0);
+    digitalWrite(RelayBoard2[4], 0);
+    digitalWrite(RelayBoard2[5], 0);
+    digitalWrite(RelayBoard2[6], 0);
+    digitalWrite(RelayBoard2[7], 0);
+    delay(value);
+    digitalWrite(RelayBoard1[0], 1);
+    digitalWrite(RelayBoard1[1], 1);
+    digitalWrite(RelayBoard1[2], 1);
+    digitalWrite(RelayBoard1[3], 1);
+    digitalWrite(RelayBoard1[4], 1);
+    digitalWrite(RelayBoard1[5], 1);
+    digitalWrite(RelayBoard1[6], 1);
+    digitalWrite(RelayBoard1[7], 1);
+    digitalWrite(RelayBoard2[0], 1);
+    digitalWrite(RelayBoard2[1], 1);
+    digitalWrite(RelayBoard2[2], 1);
+    digitalWrite(RelayBoard2[3], 1);
+    digitalWrite(RelayBoard2[4], 1);
+    digitalWrite(RelayBoard2[5], 1);
+    digitalWrite(RelayBoard2[6], 1);
+    digitalWrite(RelayBoard2[7], 1);
+
+
+  }
+
+  if (randNumber = 250) {
+
+    digitalWrite(RelayBoard1[6], HIGH);
+    digitalWrite(RelayBoard2[6], HIGH);
+    delay(value);
+
+    digitalWrite(RelayBoard1[6], LOW);
+    digitalWrite(RelayBoard2[6], LOW);
+    delay(value);
+
+
+    digitalWrite(RelayBoard1[4], HIGH);
+    digitalWrite(RelayBoard2[4], HIGH);
+    delay(value);
+
+    digitalWrite(RelayBoard1[4], LOW);
+    digitalWrite(RelayBoard2[4], LOW);
+    delay(value);
+
+
+
+  }
+
+  if (randNumber = 400) {
+
+    for (p = 0; p < 8; p++) {
+      digitalWrite(RelayBoard2[p], 0);
+      delay(value);
+      digitalWrite(RelayBoard2[p + 1], 0);
+      delay(value);
+      digitalWrite(RelayBoard2[p], 1);
+      delay(value * 2);
+    }
+    for (p = 7; p > 0; p--) {
+      digitalWrite(RelayBoard2[p], 0);
+      delay(value);
+      digitalWrite(RelayBoard2[p - 1], 0);
+      delay(value);
+      digitalWrite(RelayBoard2[p], 1);
+      delay(value * 2);
+    }
+
+  }
 
 
   if (randNumber = 450) {
 
-for (p=0;p<8;p++) {
-   digitalWrite(RelayBoard1[p], 0);
-   delay(value);
-   digitalWrite(RelayBoard1[p + 1], 0);
-   delay(value);
-   digitalWrite(RelayBoard1[p], 1);
-   delay(value*2);
-  }
-  for (p=7;p>0;p--) {
-   digitalWrite(RelayBoard1[p], 0);
-   delay(value);
-   digitalWrite(RelayBoard1[p - 1], 0);
-   delay(value);
-   digitalWrite(RelayBoard1[p], 1);
-   delay(value*2);
+    for (p = 0; p < 8; p++) {
+      digitalWrite(RelayBoard1[p], 0);
+      delay(value);
+      digitalWrite(RelayBoard1[p + 1], 0);
+      delay(value);
+      digitalWrite(RelayBoard1[p], 1);
+      delay(value * 2);
+    }
+    for (p = 7; p > 0; p--) {
+      digitalWrite(RelayBoard1[p], 0);
+      delay(value);
+      digitalWrite(RelayBoard1[p - 1], 0);
+      delay(value);
+      digitalWrite(RelayBoard1[p], 1);
+      delay(value * 2);
+    }
+
   }
 
- }
+  digitalWrite(RelayBoard2[7], 0);
+  digitalWrite(RelayBoard2[7], 1);
+  delay(value);
+}
 
- digitalWrite(RelayBoard2[7], 0);
-digitalWrite(RelayBoard2[7], 1);
-delay(value);
-  }
-  
 
