@@ -2,7 +2,7 @@ int Letra1[] = {2, 3, 4, 5, 6, 7, 8, 9} ;
 int Letra2[] = {10, 11, 12, 13, 14, 15, 16, 17};
 long randNumber;
 
-String s = " humans: aren't real, are animals, are free, are underrated, are among us, are cthulhu, like a virus. humans: need air, need love, need water, need to belong. human: services, rights, feelings, thoughts, process, dreams. human: sense of smell, sense of time, sent to mars, produce methane, protostomes or deuterostomes, protecting the environment destroying everything ";
+String s = " humans: aren't real, are animals, are free, are underrated, are among us, are cthulhu, like a virus. humans: need air, need love, need water, need to belong. human: services, rights, feelings, thoughts, process, dreams. human: sense of smell, sense of time, sent to mars, produce methane, protostomes or deuterostomes, protecting the environment destroying everything. human genes: BRCA2, CFTR, MTCYB, DMD, GAPDH, HBB, HIST1H1A, TTN, 00, 01, 11, 01, 10, 11 ";
 
 void setup() {
   for (int p = 0; p < 8; p++) {
@@ -16,8 +16,11 @@ void setup() {
 }
 
 void loop() {
+   for (int i = 0; i < 8; i++){
+  digitalWrite(Letra1[i], 0);
+  digitalWrite(Letra2[i], 0);
   
-  randNumber = random(200, 300);
+  randNumber = random(40, 210);
   
   for (int c = 0; c < s.length(); c += 2) {
     // las proximas 2 letras
@@ -73,6 +76,7 @@ void loop() {
     digitalWrite(Letra2[7], v7);
 
     delay(randNumber);
+   }
   }
 
 }
