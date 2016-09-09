@@ -1,6 +1,28 @@
 import numpy as np
 import cv2
 import json
+import sc
+import time, threading
+import OSC
+
+FPS = 20.0
+LOOP_PERIOD = 1.0/FPS
+lastLoop = 0
+
+receive_address = '192.168.1.165', 1234
+s = OSC.OSCServer(receive_address)
+s.addDefaultHandlers()
+
+#OSC
+# 3 GRUPOS DE 8 LAMPARAS CON UN ID: RP1 RP2 RP3
+# Cada PI se indetifica para enviar un mensaje
+
+# CADA LAMAPARA TIENE UN INDICE DE ACUERDO A SU POSICION del 0 al 7
+# RELACION DE VALORES
+#tiempo = envelop (por lampara)
+#position = pitch (por lamapara)
+#número de lamps = channel (cuantas lamparas se enciende determina el canal)
+#ID del raspy = synth pallet (el id de cada PI determina el grupo de synthdefs)
 
 
 def translate(value, inMin, inMax, outMin, outMax):
@@ -20,7 +42,7 @@ def create_blank(width, height, rgb_color=(0, 0, 0)):
 
 thresh = 250
 maxValue = 255
-fn = "IMG_1496.MOV"
+fn = "IMG_1473.MOV"
 cap = cv2.VideoCapture(fn)
 
 
@@ -43,6 +65,14 @@ detector = cv2.SimpleBlobDetector(pp)
 track = image = create_blank(920, 100, rgb_color=(0,0,0))
 x_off = 10
 y_off = 420;
+
+
+#para importar la camara del raspberry
+try:
+    from picamera.array import PiRGBArray
+    from picamera import PiCamera
+
+
 while(cap.isOpened()):
 	try:
 		ret, frame = cap.read()
